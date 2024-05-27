@@ -1,0 +1,15 @@
+.logo {
+    height: 8vmin;
+    pointer-events: none;
+}
+
+.bg-green {
+    background-color: #385600 !important;
+}
+
+a.bg-green:hover,
+a.bg-green:focus,
+button.bg-green:hover,
+button.bg-green:focus {
+    background-color: #385600 !important;
+}
