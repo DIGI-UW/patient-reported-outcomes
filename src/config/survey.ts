@@ -18,6 +18,12 @@ const DEFAULT_SURVEY_JSON = {
      "html": "<h6>Please rate your ability to do the following activities in the last week by selecting the number below the appropriate response.</h6>\n"
     },
     {
+     "type": "number",
+     "visible": false,
+     "name": "patientId",
+     "title": "Patient ID"
+    },
+    {
      "type": "dropdown",
      "name": "openTightJar",
      "title": "Open a tight or new jar",

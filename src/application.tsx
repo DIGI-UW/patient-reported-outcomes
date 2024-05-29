@@ -1,15 +1,20 @@
 import logo from './logo.svg';
+import { Model } from 'survey-core';
 import React, { useState } from "react";
 import { Card, CardBody, Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
+import { useSearchParams } from 'react-router-dom';
 import SurveyComponent from "./components/survey";
 import defaultSurveyConfig from "./config/survey";
 import "./styles.css"
+
+const survey = new Model(defaultSurveyConfig.DEFAULT_SURVEY_JSON);
 
 export interface IApplicationProps {}
 
 const Application: React.FunctionComponent<IApplicationProps> = props => {
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
-
+    const [searchParams] = useSearchParams();
+    const patientId = searchParams.get('pid');
     return (
         <>
             <Navbar className="bg-green" dark expand="md">
@@ -32,11 +37,30 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                     <CardBody>
                         <SurveyComponent 
                             css={defaultSurveyConfig.DEFAULT_SURVEY_CSS} 
-                            json={defaultSurveyConfig.DEFAULT_SURVEY_JSON} 
-                            theme={defaultSurveyConfig.DEFAULT_SURVEY_THEME} 
+                            theme={defaultSurveyConfig.DEFAULT_SURVEY_THEME}
+                            model={survey} 
                             data={defaultSurveyConfig.DEFAULT_SURVEY_DATA}
                             onComplete={(survey: any) => {
-                                console.log(survey.data)
+                                survey.onComplete.add(function (sender: { data: any; }, options: { showSaveInProgress: () => void; showSaveSuccess: () => void; showSaveError: () => void; }) {
+                                    survey.setValue("patientId", patientId);
+                                    options.showSaveInProgress();
+                                    const xhr = new XMLHttpRequest();
+                                    const url = "http://sgs.uwdigi.org/openmrs/ws/rest/v1/outcomes/questionnaire";
+                                    xhr.open("POST", url);
+                                    xhr.withCredentials = true;
+                                    xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:Admin123"));
+                                    xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+                                    xhr.onload = xhr.onerror = function () {
+                                        if (xhr.status === 200) {
+                                            options.showSaveSuccess();
+                                        } else {
+                                            options.showSaveError();
+                                        }
+                                    };
+                                    xhr.send(JSON.stringify(sender.data));
+                                    console.error(xhr.status + " test " + xhr.statusText + " " + url);
+                                    console.log(sender.data);
+                                });
                             }}
                         />
                     </CardBody>

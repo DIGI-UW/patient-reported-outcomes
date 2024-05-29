@@ -1,21 +1,22 @@
 import React from "react";
+import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 
 export interface ISurveyProps {
     css: any;
-    json: any; 
     theme: any;
+    model: Model;
     data: any; 
     onComplete: (survey: any) => void;
 }
 
 const SurveyComponent: React.FunctionComponent<ISurveyProps> = props => {
-    const {css, json, theme, data,  onComplete} = props;
+    const {css, theme, model, data,  onComplete} = props;
     return (
         <Survey
             css={css}
-            json={json}
             theme={theme}
+            model={model}
             data={data}
             onComplete={onComplete}
         />
