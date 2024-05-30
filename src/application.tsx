@@ -50,16 +50,15 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                                     xhr.withCredentials = true;
                                     xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:Admin123"));
                                     xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+                                    xhr.setRequestHeader("Accept", "application/json");
                                     xhr.onload = xhr.onerror = function () {
-                                        if (xhr.status === 200) {
+                                        if (xhr.status === 201) {
                                             options.showSaveSuccess();
                                         } else {
                                             options.showSaveError();
                                         }
                                     };
                                     xhr.send(JSON.stringify(sender.data));
-                                    console.error(xhr.status + " test " + xhr.statusText + " " + url);
-                                    console.log(sender.data);
                                 });
                             }}
                         />
