@@ -20,8 +20,8 @@ const DEFAULT_SURVEY_JSON = {
     {
      "type": "number",
      "visible": false,
-     "name": "patientId",
-     "title": "Patient ID"
+     "name": "guid",
+     "title": "GUID"
     },
     {
      "type": "dropdown",
@@ -332,6 +332,15 @@ const DEFAULT_SURVEY_JSON = {
        "text": "5. So much difficult that I can't sleep"
       }
      ]
+    },
+    {
+     "type": "file",
+     "name": "photo",
+     "title": "Please upload a photo",
+     "allowMultiple": true,
+     "waitForUpload": true,
+     "needConfirmRemoveFile": true,
+     "sourceType": "file-camera"
     }
    ],
    "navigationButtonsVisibility": "show"

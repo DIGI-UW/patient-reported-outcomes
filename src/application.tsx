@@ -14,7 +14,7 @@ export interface IApplicationProps {}
 const Application: React.FunctionComponent<IApplicationProps> = props => {
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     const [searchParams] = useSearchParams();
-    const patientId = searchParams.get('pid');
+    const guid = searchParams.get('pid');
     return (
         <>
             <Navbar className="bg-green" dark expand="md">
@@ -42,7 +42,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                             data={defaultSurveyConfig.DEFAULT_SURVEY_DATA}
                             onComplete={(survey: any) => {
                                 survey.onComplete.add(function (sender: { data: any; }, options: { showSaveInProgress: () => void; showSaveSuccess: () => void; showSaveError: () => void; }) {
-                                    survey.setValue("patientId", patientId);
+                                    survey.setValue("guid", guid);
                                     options.showSaveInProgress();
                                     const xhr = new XMLHttpRequest();
                                     const url = "http://sgs.uwdigi.org/openmrs/ws/rest/v1/outcomes/questionnaire";
@@ -58,6 +58,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                                             options.showSaveError();
                                         }
                                     };
+                                    console.log(sender.data);
                                     xhr.send(JSON.stringify(sender.data));
                                 });
                             }}
