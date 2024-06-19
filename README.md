@@ -22,7 +22,7 @@ Health outcomes directly reported by the patient who experienced them.
 
 `npm start`
 
-## Run Client Locally
+## Run Proxy Locally
 
 `cd ../proxy`
 
