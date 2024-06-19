@@ -1,31 +1,29 @@
-# Getting Started with Create React App
+# Patient Reported Outcomes (PRO)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Health outcomes directly reported by the patient who experienced them.
 
-## Available Scripts
+### Build the client
 
-In the project directory, you can run:
+`cd client`
 
-### `npm start`
+`docker build -t sgs/outcomes:v1.0.0 .`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Build the NodeJs server proxy
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`cd ../proxy`
 
-### `npm test`
+`docker build -t sgs/proproxy:v1.0.0 .`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Optional (Local Development Setup)
 
-### `npm run build`
+## Run Client Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`cd client`
 
-The build is minified and the filenames include the hashes.
+`npm start`
 
-### Run on Docker
+## Run Client Locally
 
-docker build -t sgs/outcomes:v1.0.0 .
+`cd ../proxy`
+
+`npm run start-dev-proxy`

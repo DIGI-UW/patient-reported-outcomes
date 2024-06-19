@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import axios from 'axios';
 import { Model } from 'survey-core';
 import React, { useState } from "react";
 import { Card, CardBody, Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
@@ -6,6 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 import SurveyComponent from "./components/survey";
 import defaultSurveyConfig from "./config/survey";
 import "./styles.css"
+
 
 const survey = new Model(defaultSurveyConfig.DEFAULT_SURVEY_JSON);
 
@@ -15,6 +17,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
     const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
     const [searchParams] = useSearchParams();
     const guid = searchParams.get('pid');
+    
     return (
         <>
             <Navbar className="bg-green" dark expand="md">
@@ -44,22 +47,12 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                                 survey.onComplete.add(function (sender: { data: any; }, options: { showSaveInProgress: () => void; showSaveSuccess: () => void; showSaveError: () => void; }) {
                                     survey.setValue("guid", guid);
                                     options.showSaveInProgress();
-                                    const xhr = new XMLHttpRequest();
-                                    const url = "http://sgs.uwdigi.org/openmrs/ws/rest/v1/outcomes/questionnaire";
-                                    xhr.open("POST", url);
-                                    xhr.withCredentials = true;
-                                    xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:Admin123"));
-                                    xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-                                    xhr.setRequestHeader("Accept", "application/json");
-                                    xhr.onload = xhr.onerror = function () {
-                                        if (xhr.status === 201) {
-                                            options.showSaveSuccess();
-                                        } else {
-                                            options.showSaveError();
-                                        }
-                                    };
-                                    console.log(sender.data);
-                                    xhr.send(JSON.stringify(sender.data));
+                                    const postAxiosQuestionnaire = async() => {
+                                        await axios.post("http://localhost:5000/questionaire", sender.data)
+                                        .then((res) => options.showSaveSuccess() + res.data)
+                                        .catch((res) =>  options.showSaveError() + res.data)
+                                    }
+                                    postAxiosQuestionnaire();
                                 });
                             }}
                         />
