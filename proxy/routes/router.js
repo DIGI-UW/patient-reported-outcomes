@@ -3,7 +3,7 @@ const router = express.Router();
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 require("dotenv").config();
 
-router.post("/questionaire", async (req, res) => {
+router.post("/proxy", async (req, res) => {
   const data = req.body;
   const xhr = new XMLHttpRequest();
   xhr.open("POST", process.env.POST_QUESTIONNAIRE_ENDPOINT);

@@ -12,7 +12,7 @@ Health outcomes directly reported by the patient who experienced them.
 
 `cd ../proxy`
 
-`docker build -t sgs/proproxy:v1.0.0 .`
+`docker build -t sgs/proxy:v1.0.0 .`
 
 # Optional (Local Development Setup)
 

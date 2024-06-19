@@ -48,7 +48,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                                     survey.setValue("guid", guid);
                                     options.showSaveInProgress();
                                     const postAxiosQuestionnaire = async() => {
-                                        await axios.post("http://localhost:5000/questionaire", sender.data)
+                                        await axios.post("http://sgs.uwdigi.org/proxy", sender.data)
                                         .then((res) => options.showSaveSuccess() + res.data)
                                         .catch((res) =>  options.showSaveError() + res.data)
                                     }
