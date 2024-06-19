@@ -26,4 +26,15 @@ Health outcomes directly reported by the patient who experienced them.
 
 `cd ../proxy`
 
+Add the required environment variables;
+
+`cp .env.example .env && vim .env`
+
+```
+PORT=5000
+OPENMRS_USERNAME=''
+OPENMRS_PASSWORD=''
+POST_QUESTIONNAIRE_ENDPOINT='<DOMAIN_NAME>/openmrs/ws/rest/v1/outcomes/questionnaire'
+```
+
 `npm run start-dev-proxy`
