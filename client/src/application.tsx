@@ -16,8 +16,11 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
     const [searchParams] = useSearchParams();
     const guid = searchParams.get('pid');
     const locale = searchParams.get('locale');
-    const survey = new Model(locale === 'en' ? defaultSurveyConfig.DEFAULT_SURVEY_JSON: (locale === 'es' ? defaultSurveyConfig.SPANISH_SURVEY_JSON: defaultSurveyConfig.VIETNAMESE_SURVEY_JSON));
-
+    const survey = new Model(
+        locale === 'vi' ? defaultSurveyConfig.VIETNAMESE_SURVEY_JSON :
+        locale === 'es' ? defaultSurveyConfig.SPANISH_SURVEY_JSON :
+        defaultSurveyConfig.DEFAULT_SURVEY_JSON
+      );
     return (
         <>
             <Navbar className="bg-green" dark expand="md">
