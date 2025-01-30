@@ -19,6 +19,7 @@ router.post("/proxy", async (req, res) => {
     if (xhr.status === 201) {
       res.status(201).send("Successfully saved Questionnaire!");
     } else {
+      console.error(`Error saving Questionnaire: ${xhr.status} - ${xhr.responseText}`);
       res.status(422).send("Error saving Questionnaire!");
     }
   };
