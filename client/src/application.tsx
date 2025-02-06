@@ -21,6 +21,8 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
         locale === 'es' ? defaultSurveyConfig.SPANISH_SURVEY_JSON :
         defaultSurveyConfig.DEFAULT_SURVEY_JSON
       );
+    const apiUrl = window.env.REACT_APP_API_URL || 'https://sgs.uwdigi.org/proxy'; 
+
     return (
         <>
             <Navbar className="bg-green" dark expand="md">
@@ -51,7 +53,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                                     survey.setValue("guid", guid);
                                     options.showSaveInProgress();
                                     const postAxiosQuestionnaire = async() => {
-                                        await axios.post("https://sgs.uwdigi.org/proxy", sender.data)
+                                        await axios.post(apiUrl, sender.data)
                                         .then((res) => options.showSaveSuccess() + res.data)
                                         .catch((res) =>  options.showSaveError() + res.data)
                                     }
