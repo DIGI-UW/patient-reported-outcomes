@@ -16,7 +16,11 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
     const [searchParams] = useSearchParams();
     const guid = searchParams.get('pid');
     const locale = searchParams.get('locale');
+    const type = searchParams.get('type');
     const survey = new Model(
+        locale === 'vi' && type === 'foot' ? defaultSurveyConfig.DEFAULT_FOOT_EN_SURVEY_JSON :
+        locale === 'es' && type === 'foot' ? defaultSurveyConfig.SPANISH_FOOT_SURVEY_JSON :
+        locale === 'en' && type === 'foot' ? defaultSurveyConfig.DEFAULT_FOOT_EN_SURVEY_JSON :
         locale === 'vi' ? defaultSurveyConfig.VIETNAMESE_SURVEY_JSON :
         locale === 'es' ? defaultSurveyConfig.SPANISH_SURVEY_JSON :
         defaultSurveyConfig.DEFAULT_SURVEY_JSON
@@ -69,4 +73,3 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
 }
 
 export default Application;
-
