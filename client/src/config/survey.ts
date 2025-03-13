@@ -477,15 +477,15 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
       "choices": [
         {
           "value": "9157ecdf-a297-a09f-0dce-6d2dc3c7089e",
-          "text": "Sí, me limita mucho"
+          "text": "Yes, Limited A Lot"
         },
         {
           "value": "d2170132-9eed-783b-0a9d-3958ab3c3023",
-          "text": "Sí, me limita un poco"
+          "text": "Yes, Limited A Little"
         },
         {
           "value": "21b437de-8d0e-225d-8162-74deb65e909a",
-          "text": "No, no me limita mucho"
+          "text": "No, Not Limited At All"
         }
       ]
      },
@@ -496,15 +496,15 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
       "choices": [
         {
           "value": "9157ecdf-a297-a09f-0dce-6d2dc3c7089e",
-          "text": "Sí, me limita mucho"
+          "text": "Yes, Limited A Lot"
         },
         {
           "value": "d2170132-9eed-783b-0a9d-3958ab3c3023",
-          "text": "Sí, me limita un poco"
+          "text": "Yes, Limited A Little"
         },
         {
           "value": "21b437de-8d0e-225d-8162-74deb65e909a",
-          "text": "No, no me limita mucho"
+          "text": "No, Not Limited At All"
         }
       ]
      },
@@ -618,27 +618,27 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
       "choices": [
         {
           "value": "865c08d4-7b11-88ff-951d-5432dcde864d",
-          "text": "Siempre"
+          "text": "All of the Time"
         },
         {
           "value": "9b69dde0-a76a-8eb6-5cc7-e3eb288b0224",
-          "text": "Casi siempre"
+          "text": "Most of the Time"
         },
         {
           "value": "6c5524a5-8d3d-81e8-9e9d-c3ab1fa25ef8",
-          "text": "Muchas veces"
+          "text": "A Good Bit of the Time"
         },
         {
           "value": "a4ab954a-812b-1889-3ec3-e056f0ae0f6c",
-          "text": "Algunas veces"
+          "text": "Some of the Time"
         },
         {
           "value": "c58bbc23-7e5e-638c-1d5b-b4108e7260b0",
-          "text": "Sólo alguna vez"
+          "text": "A Little of the Time"
         },
         {
           "value": "9922b400-3a88-5bb0-0d59-c121ad5751e6",
-          "text": "Nunca"
+          "text": "None of the Time"
         }
       ]
      },
@@ -649,27 +649,27 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
       "choices": [
         {
           "value": "865c08d4-7b11-88ff-951d-5432dcde864d",
-          "text": "Siempre"
+          "text": "All of the Time"
         },
         {
           "value": "9b69dde0-a76a-8eb6-5cc7-e3eb288b0224",
-          "text": "Casi siempre"
+          "text": "Most of the Time"
         },
         {
           "value": "6c5524a5-8d3d-81e8-9e9d-c3ab1fa25ef8",
-          "text": "Muchas veces"
+          "text": "A Good Bit of the Time"
         },
         {
           "value": "a4ab954a-812b-1889-3ec3-e056f0ae0f6c",
-          "text": "Algunas veces"
+          "text": "Some of the Time"
         },
         {
           "value": "c58bbc23-7e5e-638c-1d5b-b4108e7260b0",
-          "text": "Sólo alguna vez"
+          "text": "A Little of the Time"
         },
         {
           "value": "9922b400-3a88-5bb0-0d59-c121ad5751e6",
-          "text": "Nunca"
+          "text": "None of the Time"
         }
       ]
      },
@@ -680,27 +680,27 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
       "choices": [
         {
           "value": "865c08d4-7b11-88ff-951d-5432dcde864d",
-          "text": "Siempre"
+          "text": "All of the Time"
         },
         {
           "value": "9b69dde0-a76a-8eb6-5cc7-e3eb288b0224",
-          "text": "Casi siempre"
+          "text": "Most of the Time"
         },
         {
           "value": "6c5524a5-8d3d-81e8-9e9d-c3ab1fa25ef8",
-          "text": "Muchas veces"
+          "text": "A Good Bit of the Time"
         },
         {
           "value": "a4ab954a-812b-1889-3ec3-e056f0ae0f6c",
-          "text": "Algunas veces"
+          "text": "Some of the Time"
         },
         {
           "value": "c58bbc23-7e5e-638c-1d5b-b4108e7260b0",
-          "text": "Sólo alguna vez"
+          "text": "A Little of the Time"
         },
         {
           "value": "9922b400-3a88-5bb0-0d59-c121ad5751e6",
-          "text": "Nunca"
+          "text": "None of the Time"
         }
       ]
      },
