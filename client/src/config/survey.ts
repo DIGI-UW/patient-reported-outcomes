@@ -380,7 +380,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },
      {
       "type": "dropdown",
-      "name": "VasPainScale",
+      "name": "vasPainScale",
       "title": "On a scale of 0 to 10, with 0 being no pain and 10 being the worst pain possible, how would you rate your pain?",
       "choices": [
 
@@ -566,7 +566,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },     
      {
       "type": "dropdown",
-      "name": "unAbleToDoWorkOrOtherActivitiesCarefullyAsUsual",
+      "name": "unableToDoWorkOrOtherActivitiesCarefullyAsUsual",
       "title": "Did you not perform your work or daily activities as carefully as usual because of an emotional problem?",
       "choices": [
         {
@@ -613,7 +613,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },
      {
       "type": "dropdown",
-      "name": "HaveYouFeltCalmAndPeaceful",
+      "name": "haveYouFeltCalmAndPeaceful",
       "title": "Did you feel calm and peaceful?",
       "choices": [
         {
@@ -779,7 +779,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },
      {
       "type": "dropdown",
-      "name": "VasPainScale",
+      "name": "vasPainScale",
       "title": "En una escala de 0 a 10, 0 es sin dolor y 10 siendo el peor dolor posible, ¿cómo calificaría su dolor?",
       "choices": [
 
@@ -965,7 +965,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },     
      {
       "type": "dropdown",
-      "name": "unAbleToDoWorkOrOtherActivitiesCarefullyAsUsual",
+      "name": "unableToDoWorkOrOtherActivitiesCarefullyAsUsual",
       "title": "¿No hizo su trabajo o sus actividades cotidianas tan cuidadosamente como de costumbre, por algún problema emocional?",
       "choices": [
         {
@@ -1012,7 +1012,7 @@ const DEFAULT_FOOT_EN_SURVEY_JSON =
      },
      {
       "type": "dropdown",
-      "name": "HaveYouFeltCalmAndPeaceful",
+      "name": "haveYouFeltCalmAndPeaceful",
       "title": "¿Se sintió calmado y tranquilo?",
       "choices": [
         {
